@@ -6,16 +6,18 @@
 package inspectvehicle.integration;
 
 import inspectvehicle.model.CheckListDTO;
+import java.util.Random;
 
 /**
  *
  * @author mohamad
  */
 public class VehicleInspectionsRegisty {
+   
     
-    
-    public CheckListDTO checkInspectionList(int RegNo){
-        CheckListDTO obj= new CheckListDTO();
-        return obj;
+    public CheckListDTO checkInspectionList(String regNo){
+        Random creator = new Random();
+        CheckListDTO checkList = new CheckListDTO(creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean());
+        return checkList;
     }
 }

@@ -15,18 +15,16 @@ public class TransactionSystem {
         
     }
     
-    public int getCost(CheckListDTO checkList){
+    public static int getCost(CheckListDTO checkList){
         int sum=0;
-        if (checkList.isToCheckWheel()) sum+=100;
+        if (checkList.isToCheckWheel()) sum+=150;
         if (checkList.isToCheckBreaks()) sum+=100;
-        if (checkList.isToCheckWheel()) sum+=100;
-        if (checkList.isToCheckWheel()) sum+=100;
-        if (checkList.isToCheckWheel()) sum+=100;
-        if (checkList.isToCheckWheel()) sum+=100;
-        if (checkList.isToCheckWheel()) sum+=100;
-        
-        
-        return 
+        if (checkList.isToCheckDoors()) sum+=50;
+        if (checkList.isToCheckEngine()) sum+=200;
+        if (checkList.isToCheckKeys()) sum+=100;
+        if (checkList.isToCheckGear()) sum+=300;
+
+        return sum;
     }
     
     

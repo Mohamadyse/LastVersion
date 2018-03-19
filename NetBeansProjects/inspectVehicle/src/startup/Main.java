@@ -32,17 +32,8 @@ public class Main {
         
         View screen=new View(contr);
         
-
-        
-        
-        
-        screen.register(int RegNo );
-        
-        
-        
-        
-        
-        
+        screen.toPay();
+         
        garage.closeDoor();
         // TODO code application logic here
     }

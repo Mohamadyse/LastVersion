@@ -6,25 +6,34 @@
 package inspectvehicle.view;
 
 import inspectvehicle.controller.Controller;
-
-import static sun.net.www.http.HttpClient.New;
+import java.util.Scanner;
+ 
 
 /**
  *
  * @author mohamad
  */
 public class View {
+
     private Controller contr;
-    Scanner reader=new Scanner(System.in);
-    
-    
-    
-    public View(Controller contr){
-        this.contr=contr;
+  
+
+    public View(Controller contr) {
+        this.contr = contr;
+        register();
     }
-    
-        public int register(int nummber ){
-            
-        return  contr.checkInspection(nummber);
+
+    private void register() {
+        Scanner reader= new Scanner(System.in);
+        System.out.println("Enter the vehicle registration number");
+        String regNo = reader.next();
+        int cost = contr.checkInspection(regNo);
+        System.out.println("the cost of inspection is: " + cost );
+        
     }
+ 
+    public void toPay(){
+        contr.payCard();
+    }
+        
 }

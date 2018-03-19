@@ -14,16 +14,16 @@ public class CheckListDTO {
     private boolean toCheckWheel;
     private boolean toCheckDoors;
     private boolean toCheckEngine;
-    private boolean toCheckVexel;
+    private boolean toCheckGear;
     private boolean toCheckBreaks;
     private boolean toCheckKeys;
 
-    public CheckListDTO(boolean toCheckWheel, boolean toCheckDoors, boolean toCheckEngine, boolean toCheckVexel, boolean toCheckBreaks, boolean toCheckKeys) {
+    public CheckListDTO(boolean toCheckWheel, boolean toCheckDoors, boolean toCheckEngine, boolean toCheckGear, boolean toCheckBreaks, boolean toCheckKeys) {
 
         this.toCheckWheel = toCheckWheel;
         this.toCheckDoors = toCheckDoors;
         this.toCheckEngine = toCheckEngine;
-        this.toCheckVexel = toCheckVexel;
+        this.toCheckGear = toCheckGear;
         this.toCheckBreaks = toCheckBreaks;
         this.toCheckKeys = toCheckKeys;
 
@@ -53,12 +53,12 @@ public class CheckListDTO {
         this.toCheckEngine = toCheckEngine;
     }
 
-    public boolean isToCheckVexel() {
-        return toCheckVexel;
+    public boolean isToCheckGear() {
+        return toCheckGear;
     }
 
     public void setToCheckVexel(boolean toCheckVexel) {
-        this.toCheckVexel = toCheckVexel;
+        this.toCheckGear = toCheckVexel;
     }
 
     public boolean isToCheckBreaks() {
