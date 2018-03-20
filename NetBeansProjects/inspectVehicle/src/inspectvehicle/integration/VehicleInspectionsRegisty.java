@@ -6,16 +6,27 @@
 package inspectvehicle.integration;
 
 import inspectvehicle.model.CheckListDTO;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
- *
+ this class should retrieve row information from a file 
  * @author mohamad
  */
 public class VehicleInspectionsRegisty {
-   
+     private HashMap< String,CheckListDTO > result;
     
-    public CheckListDTO checkInspectionList(String regNo){
+public VehicleInspectionsRegisty(){
+}
+
+
+
+/**
+ * it create the checklist for the vehicle from row information from a file
+ * @param regNo
+ * @return 
+ */
+    public CheckListDTO getInspectionList(String regNo){
         Random creator = new Random();
         CheckListDTO checkList = new CheckListDTO(creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean(), creator.nextBoolean());
         return checkList;

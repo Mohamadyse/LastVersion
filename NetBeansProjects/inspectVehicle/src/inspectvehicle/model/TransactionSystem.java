@@ -10,8 +10,8 @@ package inspectvehicle.model;
  * @author mohamad
  */
 public class TransactionSystem {
-    int cost;
-    public TransactionSystem(){
+    
+    private TransactionSystem(){
         
     }
     

@@ -3,48 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inspectvehicle.view;
+package util;
 
-import inspectvehicle.controller.Controller;
 import inspectvehicle.model.CheckListDTO;
-import java.util.Scanner;
- 
 
 /**
  *
  * @author mohamad
  */
-public class View {
+public class Printer {
 
-    private Controller contr;
-  
-
-    public View(Controller contr) {
-        this.contr = contr;
+    public static void printReceipt(int cost, boolean status) {
+        System.out.println("Here is the receipt : ");
+        if (status) {
+            System.out.println("it has been paid : " + cost + " successfully ");
+        } else {
+            System.out.println("Opps, somethig went wrong");
+        }
     }
 
-    public void register() {
-       
-        String regNo =  typeRegNo();
-        int cost = contr.checkInspection(regNo);
-        System.out.println("the cost of inspection is: " + cost );
-    }
-    
-    private String typeRegNo(){
-        Scanner reader= new Scanner(System.in);
-        System.out.println("Enter the vehicle registration number");
-        return  reader.next();
-    }
- 
-  
-    public void toPay(){
-        contr.payCard();
-    }
-        
-   
-        public void setResult(CheckListDTO checkList) {
+    public static void printSpecification(CheckListDTO checkList) {
         int i=1;
-            if (checkList.isToCheckBreaks()) {
+        
+        
+        if (checkList.isToCheckBreaks()) {
             System.out.println(i+". Check the bearks");
             i++;
         }
@@ -73,4 +55,5 @@ public class View {
    
         }
     }
-   }
+
+}

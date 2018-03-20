@@ -5,6 +5,7 @@
  */
 package inspectvehicle.model;
 
+import util.Printer;
 import inspectvehicle.integration.PaymentAuthorization;
 
 /**
@@ -16,16 +17,14 @@ public class Payment {
     
     
     
-    public static boolean pay(int cost){
+    public static boolean pay(int cost) {
         System.out.println("pending authorization...");
-        
-        boolean isPaid =(new PaymentAuthorization()).authorizePayment(cost);
-      
-            
-    Receipt.print(cost,isPaid);
-       
-                
-        return  isPaid ;
+
+        boolean isPaid = (new PaymentAuthorization()).authorizePayment(cost);
+
+        Printer.printReceipt(cost, isPaid);
+
+        return isPaid;
     }
     
 }

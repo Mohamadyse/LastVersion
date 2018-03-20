@@ -6,7 +6,7 @@
 package startup;
 
 import inspectvehicle.controller.Controller;
-import inspectvehicle.model.QueueProgram;
+import inspectvehicle.model.garage.QueueProgram;
 import inspectvehicle.view.View;
 
 /**
@@ -14,28 +14,34 @@ import inspectvehicle.view.View;
  * @author mohamad
  */
 public class Main {
- private static final int SLEEP_MILLIS = 3000;
+
+    private static final int SLEEP_MILLIS = 3000;
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)throws InterruptedException {
-     
-        
-        
+    public static void main(String[] args) throws InterruptedException {
+
         QueueProgram garage = new QueueProgram();
-                               Thread.sleep(SLEEP_MILLIS);
+                 Thread.sleep(SLEEP_MILLIS);
         garage.nextCustomer();
-                              Thread.sleep(SLEEP_MILLIS);
-                              
-        
-        Controller contr=new Controller();
-        
-        View screen=new View(contr);
-        
+                 Thread.sleep(SLEEP_MILLIS);
+
+        Controller contr = new Controller();
+
+        View screen = new View(contr);
+
+        screen.register();
+    
         screen.toPay();
-         
-       garage.closeDoor();
+        
+        
+        contr.ShowCheckList();
+
+        
+        
+        garage.closeDoor();
         // TODO code application logic here
     }
-    
+
 }
